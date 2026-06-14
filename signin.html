@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #ffffff;
+        font-family: "Malgun Gothic", sans-serif;
+      }
+
+      img {
+        display: block;
+        width: 240px;
+        margin-bottom: 60px;
+      }
+
+      input {
+        display: block;
+        width: 600px;
+        height: 55px;
+        margin-bottom: 15px;
+
+        border: 1px solid #ccc;
+        border-radius: 12px;
+
+        padding-left: 20px;
+        box-sizing: border-box;
+        font-size: 16px;
+        outline: none;
+      }
+
+      input:focus {
+        border-color: #3b3b39;
+      }
+
+      #login-btn {
+        width: 600px;
+        height: 60px;
+        background-color: #02c75d;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 18px;
+        font-weight: 500;
+        cursor: pointer;
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="./img/image-Photoroom (25).png" alt="로그인" />
+
+    <input id="username" type="text" placeholder="아이디를 입력하세요" />
+    <input id="password" type="password" placeholder="비밀번호를 입력하세요" />
+
+    <button id="login-btn">로그인</button>
+  </body>
+</html>
