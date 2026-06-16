@@ -1,67 +1,168 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>로그인</title>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 페이지</title>
+
     <style>
-      body {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        background-color: #ffffff;
-        font-family: "Malgun Gothic", sans-serif;
-      }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
 
-      img {
-        display: block;
-        width: 240px;
-        margin-bottom: 60px;
-      }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #fff;
+        }
 
-      input {
-        display: block;
-        width: 600px;
-        height: 55px;
-        margin-bottom: 15px;
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 1200px;
+            padding: 40px;
+            gap: 80px;
+        }
 
-        border: 1px solid #ccc;
-        border-radius: 12px;
+        /* 왼쪽 회원가입 이미지 */
+        .title-area {
+            flex: 0 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-        padding-left: 20px;
-        box-sizing: border-box;
-        font-size: 16px;
-        outline: none;
-      }
+       .title-area img {
+            width: 24rem;       /* 이미지 크기를 줄였습니다. */
+            object-fit: contain;
+            margin-left: -40%; /* 현재 위치 유지 */
+        }
 
-      input:focus {
-        border-color: #3b3b39;
-      }
+        /* 오른쪽 폼 */
+        .form-area {
+            width: 450px;       /* 고정 너비 */
+            flex-shrink: 0;     /* 줄어들지 않음 */
 
-      #login-btn {
-        width: 600px;
-        height: 60px;
-        background-color: #02c75d;
-        color: white;
-        border: none;
-        border-radius: 12px;
-        font-size: 18px;
-        font-weight: 500;
-        cursor: pointer;
-        margin-top: 15px;
-      }
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .input-field {
+            width: 100%;
+            height: 65px;
+
+            border: 1px solid #1E73E6;
+            border-radius: 12px;
+
+            background-color: #FFFFFF;
+
+            padding: 0 20px;
+
+            font-size: 18px;
+            outline: none;
+        }
+
+        .input-field::placeholder {
+            color: #B5B5B5;
+        }
+
+        .submit-btn {
+            width: 100%;
+            height: 65px;
+
+            border: none;
+            border-radius: 12px;
+
+            background-color: #0062D2;
+
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            margin-top: 4px;
+
+            transition: background-color 0.2s;
+        }
+
+        .submit-btn:hover {
+            background-color: #004FB0;
+        }
+
+        .footer-link {
+            text-align: center;
+
+            color: #7A7A7A;
+            font-size: 15px;
+
+            text-decoration: none;
+
+            margin-top: 8px;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
+        /* 모바일 대응 */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .title-area img {
+                width: 22rem;
+                margin-left: 0;
+            }
+
+            .form-area {
+                width: 100%;
+                max-width: 450px;
+            }
+        }
     </style>
-  </head>
-  <body>
-    <img src="./img/image-Photoroom (25).png" alt="로그인" />
+</head>
 
-    <input id="username" type="text" placeholder="아이디를 입력하세요" />
-    <input id="password" type="password" placeholder="비밀번호를 입력하세요" />
+<body>
 
-    <button id="login-btn">로그인</button>
-  </body>
+    <div class="container">
+
+        <div class="title-area">
+            <img src="image/로그인.png" alt="로그인">
+        </div>
+
+        <!-- 오른쪽 입력 폼 -->
+        <form class="form-area" onsubmit="return false;">
+
+            <input
+                type="text"
+                class="input-field"
+                placeholder="아이디를 입력하세요"
+            >
+
+            <input
+                type="password"
+                class="input-field"
+                placeholder="비밀번호를 입력하세요"
+            >
+
+            <button type="submit" class="submit-btn">
+                로그인
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
 </html>
